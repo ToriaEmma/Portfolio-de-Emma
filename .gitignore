@@ -1,0 +1,60 @@
+# Dependencies
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Production builds
+dist/
+build/
+
+# Environment files
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Temporary files
+*.tmp
+*.temp
+
+# Cache
+.cache/
+.parcel-cache/
+
+# Coverage reports
+coverage/
+
+# Vercel
+.vercel
+
+# Ne PAS ignorer les fichiers importants du portfolio
+!latelierpaon.com/
+!latelierpaon.com/index.html
+!latelierpaon.com/css/
+!latelierpaon.com/js/
+!latelierpaon.com/img/
+!latelierpaon.com/_nuxt/
+!latelierpaon.com/favicon.ico
+!latelierpaon.com/vercel.json
+!latelierpaon.com/.vercelignore
