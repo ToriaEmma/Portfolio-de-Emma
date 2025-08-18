@@ -12,6 +12,9 @@
       "dest": "/index.html"
     }
   ],
+  "functions": {
+    "maxDuration": 10
+  },
   "headers": [
     {
       "source": "/(.*)",
