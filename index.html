@@ -498,6 +498,7 @@
       <script src="/_nuxt/6b00643.js"></script>
       <script src="/_nuxt/310e83f.js"></script>
       <script src="/_nuxt/a684f95.js"></script>
+      <script src="/js/theme-toggle.js"></script>
       <script src="/js/enhanced-interactions.js"></script>
       <script src="/js/micro-interactions.js"></script>
       <script src="/js/contact-handler.js"></script>
@@ -4639,6 +4640,49 @@
       position: relative;
       box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
       border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .theme-toggle i {
+      color: #333;
+      font-size: 18px;
+      transition: all 0.3s ease;
+    }
+
+    .dark .theme-toggle {
+      background: rgba(0, 0, 0, 0.8);
+      border-color: rgba(255, 255, 255, 0.3);
+    }
+
+    .dark .theme-toggle i {
+      color: #fff;
+    }
+
+    /* Styles pour le mode sombre */
+    .dark {
+      background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);
+      color: #ffffff;
+    }
+
+    .dark .top-navbar {
+      background: rgba(0, 0, 0, 0.8);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .dark .nav-list a {
+      color: #ffffff;
+    }
+
+    .dark .brand-corner .brand-name-corner {
+      color: #ffffff;
+    }
+
+    .dark .hero-section,
+    .dark .about-modern-section,
+    .dark .skills-modern-section,
+    .dark .projects-section-premium,
+    .dark footer {
+      background: rgba(0, 0, 0, 0.7);
+      color: #ffffff;
     }
 
     .skill-progress {
