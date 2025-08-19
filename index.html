@@ -251,9 +251,9 @@
           gap: 10px !important;
         }
       </style>
-      <script data-n-head="ssr" src="/js/google-tag-manager.js"></script>
+      <script data-n-head="ssr" src="js/google-tag-manager.js"></script>
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
-      <link rel="stylesheet" href="/css/footer-override.css"/>
+      <link rel="stylesheet" href="css/footer-override.css"/>
       <link rel="preconnect" href="https://fonts.googleapis.com">
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
       <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -264,11 +264,6 @@
       <div class="brand-corner">
         <span class="brand-name-corner">Emmanuela TODEDJI</span>
       </div>
-
-      <!-- Bouton toggle mode sombre/clair -->
-      <button class="theme-toggle" onclick="toggleTheme()">
-        <i class="fas fa-sun" id="theme-icon"></i>
-      </button>
 
       <!-- Barre de navigation moderne et professionnelle -->
       <nav class="top-navbar">
@@ -499,15 +494,14 @@
       <script>
         window.__NUXT__={config:{_app:{basePath:"/",assetsPath:"/_nuxt/",cdnURL:null}}}
       </script>
-      <script src="/_nuxt/a4f711a.js"></script>
-      <script src="/_nuxt/6b00643.js"></script>
-      <script src="/_nuxt/310e83f.js"></script>
-      <script src="/_nuxt/a684f95.js"></script>
-      <script src="/js/theme-toggle.js"></script>
-      <script src="/js/enhanced-interactions.js"></script>
-      <script src="/js/micro-interactions.js"></script>
-      <script src="/js/contact-handler.js"></script>
-      <script src="/projects-modal.js"></script>
+      <script src="_nuxt/a4f711a.js"></script>
+      <script src="_nuxt/6b00643.js"></script>
+      <script src="_nuxt/310e83f.js"></script>
+      <script src="_nuxt/a684f95.js"></script>
+      <script src="js/enhanced-interactions.js"></script>
+      <script src="js/micro-interactions.js"></script>
+      <script src="js/contact-handler.js"></script>
+      <script src="projects-modal.js"></script>
       <!--<script>
         // Supprime tous les éléments contenant 'menu' dans leur texte ou attributs
         function removeMenuElements() {
@@ -4647,49 +4641,6 @@
       border: 1px solid rgba(255, 255, 255, 0.1);
     }
 
-    .theme-toggle i {
-      color: #333;
-      font-size: 18px;
-      transition: all 0.3s ease;
-    }
-
-    .dark .theme-toggle {
-      background: rgba(0, 0, 0, 0.8);
-      border-color: rgba(255, 255, 255, 0.3);
-    }
-
-    .dark .theme-toggle i {
-      color: #fff;
-    }
-
-    /* Styles pour le mode sombre */
-    .dark {
-      background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);
-      color: #ffffff;
-    }
-
-    .dark .top-navbar {
-      background: rgba(0, 0, 0, 0.8);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    }
-
-    .dark .nav-list a {
-      color: #ffffff;
-    }
-
-    .dark .brand-corner .brand-name-corner {
-      color: #ffffff;
-    }
-
-    .dark .hero-section,
-    .dark .about-modern-section,
-    .dark .skills-modern-section,
-    .dark .projects-section-premium,
-    .dark footer {
-      background: rgba(0, 0, 0, 0.7);
-      color: #ffffff;
-    }
-
     .skill-progress {
       width: 0;
       height: 14px;
@@ -6006,6 +5957,15 @@
         <a href="#" class="legal-link">CGV</a>
       </div>
       
+      <!-- Bouton changement de mode -->
+      <button id="theme-toggle" class="theme-toggle-btn">
+        <div class="theme-icon">
+          <i class="fas fa-moon" id="moon-icon"></i>
+          <i class="fas fa-sun" id="sun-icon" style="display: none;"></i>
+        </div>
+        <span class="theme-tooltip">Changer de thème</span>
+      </button>
+
       <!-- Bouton retour en haut premium -->
       <button class="scroll-top-modern" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
         <div class="scroll-icon">
@@ -6595,7 +6555,7 @@
 </style>
 
 <!-- Scripts d'animation déplacés dans le body -->
-<script src="/js/projects-interaction.js"></script>
+<script src="js/projects-interaction.js"></script>
 <script id="scroll-animation-script">
 // Animation au scroll pour les sections principales
 (function() {
@@ -6825,7 +6785,7 @@ document.addEventListener('DOMContentLoaded', function() {
 })();
 </script>
 
-<script src="/js/sections-animations.js"></script>
+<script src="js/sections-animations.js"></script>
 
 <!-- Styles d'animation -->
 <style>
@@ -7044,7 +7004,7 @@ document.addEventListener('DOMContentLoaded', function() {
 })();
 </script>
 
-<script src="/js/sections-animations.js"></script>
+<script src="js/sections-animations.js"></script>
 
 <!-- Styles d'animation -->
 <style>
@@ -7722,7 +7682,7 @@ document.addEventListener('DOMContentLoaded', function() {
 })();
 </script>
 
-<script src="/js/sections-animations.js"></script>
+<script src="js/sections-animations.js"></script>
 
 <!-- Styles d'animation -->
 <style>
@@ -7941,7 +7901,7 @@ document.addEventListener('DOMContentLoaded', function() {
 })();
 </script>
 
-<script src="/js/sections-animations.js"></script>
+<script src="js/sections-animations.js"></script>
 
 <!-- Styles d'animation -->
 <style>

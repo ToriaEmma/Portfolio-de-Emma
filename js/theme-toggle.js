@@ -1,61 +1,63 @@
-// Fonction pour le toggle du thème
-function toggleTheme() {
-  const body = document.body;
-  const themeIcon = document.getElementById('theme-icon');
-  
-  console.log('Toggle theme called, current dark class:', body.classList.contains('dark'));
-  
-  if (body.classList.contains('dark')) {
-    // Passer en mode jour
-    body.classList.remove('dark');
-    if (themeIcon) {
-      themeIcon.className = 'fas fa-sun';
-      console.log('Switched to light mode, icon:', themeIcon.className);
+// Script pour le changement de mode jour/nuit
+(function() {
+  function initThemeToggle() {
+    const themeToggle = document.getElementById('theme-toggle');
+    const moonIcon = document.getElementById('moon-icon');
+    const sunIcon = document.getElementById('sun-icon');
+    
+    if (!themeToggle || !moonIcon || !sunIcon) return;
+    
+    // Fonction pour mettre à jour l'affichage des icônes
+    function updateIcons(isDark) {
+      if (isDark) {
+        moonIcon.style.display = 'none';
+        sunIcon.style.display = 'block';
+      } else {
+        moonIcon.style.display = 'block';
+        sunIcon.style.display = 'none';
+      }
     }
-    localStorage.setItem('theme', 'light');
-  } else {
-    // Passer en mode sombre
-    body.classList.add('dark');
-    if (themeIcon) {
-      themeIcon.className = 'fas fa-moon';
-      console.log('Switched to dark mode, icon:', themeIcon.className);
+    
+    // Vérifier le mode actuel
+    function getCurrentMode() {
+      const html = document.documentElement;
+      return html.classList.contains('dark');
     }
-    localStorage.setItem('theme', 'dark');
+    
+    // Initialiser l'affichage
+    updateIcons(getCurrentMode());
+    
+    // Gestionnaire de clic
+    themeToggle.addEventListener('click', function() {
+      const html = document.documentElement;
+      const isDarkMode = html.classList.contains('dark');
+      
+      if (isDarkMode) {
+        // Passer en mode clair
+        html.classList.remove('dark');
+        html.classList.add('light');
+        localStorage.setItem('nuxt-color-mode', 'light');
+        updateIcons(false);
+      } else {
+        // Passer en mode sombre
+        html.classList.remove('light');
+        html.classList.add('dark');
+        localStorage.setItem('nuxt-color-mode', 'dark');
+        updateIcons(true);
+      }
+      
+      // Mettre à jour la préférence globale Nuxt
+      if (window.__NUXT_COLOR_MODE__) {
+        window.__NUXT_COLOR_MODE__.preference = isDarkMode ? 'light' : 'dark';
+        window.__NUXT_COLOR_MODE__.value = isDarkMode ? 'light' : 'dark';
+      }
+    });
   }
   
-  // Forcer la mise à jour visuelle
-  document.body.style.transition = 'all 0.3s ease';
-  setTimeout(() => {
-    document.body.style.transition = '';
-  }, 300);
-}
-
-// Initialiser le thème
-function initTheme() {
-  const savedTheme = localStorage.getItem('theme');
-  const themeIcon = document.getElementById('theme-icon');
-  const body = document.body;
-  
-  console.log('Init theme, saved theme:', savedTheme);
-  
-  // Par défaut en mode jour si rien n'est sauvegardé
-  if (savedTheme === 'dark') {
-    body.classList.add('dark');
-    if (themeIcon) themeIcon.className = 'fas fa-moon';
-    console.log('Loaded dark theme');
+  // Initialiser quand le DOM est prêt
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initThemeToggle);
   } else {
-    body.classList.remove('dark');
-    if (themeIcon) themeIcon.className = 'fas fa-sun';
-    console.log('Loaded light theme');
+    initThemeToggle();
   }
-}
-
-// Charger le thème au démarrage
-document.addEventListener('DOMContentLoaded', initTheme);
-
-// Backup si DOMContentLoaded a déjà été déclenché
-if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', initTheme);
-} else {
-  initTheme();
-}
+})();
