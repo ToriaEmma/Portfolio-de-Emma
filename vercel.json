@@ -1,0 +1,12 @@
+{
+  "buildCommand": null,
+  "outputDirectory": "latelierpaon.com",
+  "installCommand": null,
+  "framework": null,
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/$1"
+    }
+  ]
+}
