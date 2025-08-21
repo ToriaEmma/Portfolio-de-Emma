@@ -205,6 +205,14 @@ button,
   --tw-bg-opacity: 1 !important;
 }
 
+/* Light mode: white clouds background */
+html:not(.dark),
+body:not(.dark),
+html:not(.dark) #__nuxt {
+  background: #fff url('img/white-bg.58090aa.svg') center top / cover no-repeat !important;
+  background-attachment: fixed;
+}
+
 .dark [class*="bg-app-violet"], .dark [class*="bg-app-violet-3"], .dark [class*="bg-\[\#4E1C66\]"], .dark [class*="bg-\[\#662483\]"], .dark [class*="bg-\[\#501c67\]"], .dark [class*="bg-\[\#874ae2\]"], .dark [class*="bg-\[\#1e0b39\]"], .dark [class*="bg-\[\#a482d4\]"], .dark [class*="bg-\[\#6745c4\]"] {
   background: #000 !important;
   background-color: #000 !important;
@@ -384,6 +392,12 @@ button,
 .plan--fifth {
   background-image: url('img/floor_atelierpaon_5.2e6831c.svg') !important;
 }
+
+/* Renfort mode jour: réapplique explicitement les SVGs jour si .dark est absente */
+html:not(.dark) .plan--second { background-image: url('img/mountains_atelierpaon_2.e02f9e6.svg') !important; }
+html:not(.dark) .plan--third  { background-image: url('img/mountains-middle_atelierpaon_3.6ecf003.svg') !important; }
+html:not(.dark) .plan--fourth { background-image: url('img/mountains-front_atelierpaon_4.7d8acae.svg') !important; }
+html:not(.dark) .plan--fifth  { background-image: url('img/floor_atelierpaon_5.2e6831c.svg') !important; }
 
 /* En mode nuit, SVGs bleus */
 .dark .plan--second {
