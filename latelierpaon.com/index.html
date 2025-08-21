@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html data-n-head-ssr lang="fr" data-n-head="%7B%22lang%22:%7B%22ssr%22:%22fr%22%7D%7D">
 <head>
+    <script>
+      try {
+        if (!localStorage.getItem('theme') && !localStorage.getItem('nuxt-color-mode')) {
+          localStorage.setItem('theme','light');
+          localStorage.setItem('nuxt-color-mode','light');
+        }
+      } catch(e){}
+    </script>
     <title>Portfolio de Emmanuela</title>
     <meta data-n-head="ssr" charset="utf-8">
     <meta data-n-head="ssr" name="viewport" content="width=device-width,initial-scale=1">
