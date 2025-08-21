@@ -11,7 +11,7 @@
   }
 
   function applyTheme(theme) {
-    const t = theme || localStorage.getItem('theme') || localStorage.getItem('nuxt-color-mode') || 'light';
+    const t = 'light';
     if (t === 'dark') {
       docEl.classList.add('dark');
       body && body.classList && body.classList.add('dark');
@@ -32,10 +32,10 @@
   }
 
   function setTheme(theme) {
-    localStorage.setItem('theme', theme);
-    try { localStorage.setItem('nuxt-color-mode', theme); } catch(_) {}
-    try { docEl.setAttribute('data-theme', theme); } catch(_) {}
-    applyTheme(theme);
+    localStorage.setItem('theme', 'light');
+    try { localStorage.setItem('nuxt-color-mode', 'light'); } catch(_) {}
+    try { docEl.setAttribute('data-theme', 'light'); } catch(_) {}
+    applyTheme('light');
   }
 
   function onClickToggle(e){

@@ -3,10 +3,9 @@
 <head>
     <script>
       try {
-        if (!localStorage.getItem('theme') && !localStorage.getItem('nuxt-color-mode')) {
-          localStorage.setItem('theme','light');
-          localStorage.setItem('nuxt-color-mode','light');
-        }
+        // Forcer systématiquement le mode jour au chargement
+        localStorage.setItem('theme','light');
+        localStorage.setItem('nuxt-color-mode','light');
       } catch(e){}
     </script>
     <title>Portfolio de Emmanuela</title>
